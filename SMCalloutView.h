@@ -54,11 +54,12 @@ extern NSTimeInterval const kSMCalloutViewRepositionDelayForUIScrollView;
 // Custom "content" view that can be any width/height. If this is set, title/subtitle/titleView/subtitleView are all ignored.
 @property (nonatomic, retain) UIView *contentView;
 
+@property (nonatomic, assign) UIEdgeInsets contentViewInsets;
+
 // calloutOffset is the offset in screen points from the top-middle of the target view, where the anchor of the callout should be shown.
 @property (nonatomic, assign) CGPoint calloutOffset;
 
 @property (nonatomic, assign) SMCalloutAnimation presentAnimation, dismissAnimation; // default SMCalloutAnimationBounce, SMCalloutAnimationFade respectively
-
 
 // Returns a new instance of SMCalloutView if running on iOS 7 or better, otherwise a new instance of SMClassicCalloutView if available.
 + (SMCalloutView *)platformCalloutView;
